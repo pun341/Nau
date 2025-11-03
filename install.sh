@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo mkdir /nauos
-sudo mv ./parse.lua /nauos/parse.lua
+sudo mv ./parse.lua /nauos/
 sudo apt install luajit
 sudo touch /usr/bin/rebuild
 
