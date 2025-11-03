@@ -17,6 +17,7 @@ This is a comment
 ```
 
 # Instruction list
+```
 @var{name:value}@ 
 Do not put space before the ':' for example: @var{name :value}@
 
@@ -24,3 +25,4 @@ Do not put space before the ':' for example: @var{name :value}@
 
 @pkgs{pkg1, pkg2, pkg3}@
 Can be seperated by a ',' or ' '
+```
