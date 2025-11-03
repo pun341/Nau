@@ -15,3 +15,12 @@ You can write comments anywhere even without a '#'
 This is a comment
 @print{This is not a comment}@
 ```
+
+# Instruction list
+@var{name:value}@ 
+Do not put space before the ':' for example: @var{name :value}@
+
+@print{string}@
+
+@pkgs{pkg1, pkg2, pkg3}@
+Can be seperated by a ',' or ' '
