@@ -1,5 +1,5 @@
 # Nau
-The cimple config wrapper for APT
+The simple config wrapper for APT
 
 # Syntax
 
