@@ -1,4 +1,3 @@
-
 local handle = io.popen("cat /nauos/config.nau")
 local code = handle:read("*a")
 handle:close()
@@ -37,10 +36,14 @@ function execute(token_table)
 		else 
 			os.execute(two)
 		end
-	elseif token_table[1] == "var" then
+	elseif token_table[1] == "var" then -- var{name:string}; print{$name};
 		var_value_now = token_table[3]
 		table.insert(variables, two)
 		table.insert(variables, var_value_now)
+	elseif token_table[1] == "listpkgs" then
+		os.execute("apt-mark showmanual")
+	elseif token_table[1] == "timezone" then
+		os.execute("timedatectl set_timezone " .. two)
 	end
 end
 
@@ -81,7 +84,7 @@ function parse(text)
 			token[token_position] = token[token_position] .. char
 		end
 	end
-	os.execute("sudo apt install " .. packages .. "")
+	os.execute("sudo apt install" .. " " .. packages .. "")
 end
 
-parse(code:gsub("\n", ""):gsub("\t", ""))
+parse("@" .. code:gsub(";", "@@"):gsub("\n", ""):gsub("\t", ""))
